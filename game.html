@@ -27,7 +27,8 @@
                         Game
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Restart</button>
+                        <a class="dropdown-item" href="index.html">Home</a>
+                        <button class="dropdown-item" href="index.html" type="button">Restart</button>
                         <button class="dropdown-item" type="button">Pause</button>
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item" type="button">Change Trivia Source</button>
@@ -39,57 +40,36 @@
                         Difficulty
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item easy" type="button">Easy</button>
-                        <button class="dropdown-item medium" type="button">Medium</button>
-                        <button class="dropdown-item hard" type="button">Hard</button>
+                        <button class="dropdown-item diff easy" type="button">Easy</button>
+                        <button class="dropdown-item diff medium" type="button">Medium</button>
+                        <button class="dropdown-item diff hard" type="button">Hard</button>
                     </div>
                 </div>
             </ul>
         </div>
     </nav>
 
-    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Choose Difficulty:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <button type="button" class="btn btn-success modalBtn">Easy</button>
-                    <button type="button" class="btn btn-warning modalBtn">Medium</button>
-                    <button type="button" class="btn btn-danger modalBtn">Hard</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+    <div class="card text-white text-center bg-dark my-3 mx-auto" style="max-width: 45rem;">
+        <div class="card-header">Question #<span id="questionNumber"></span></div>
+        <div class="card-body">
+            <h2 class="card-title" id="countdownClock">:10</h2>
+            <div class="card-text">
+                <span id="questionHero">Here's the question</span>
+                <br>
+                <div class="btn-group-lg btn-group-vertical" role="group" aria-label="Basic example" id="answerBtnGrp">
+                    <button type="button" class="btn btn-secondary answerBtn" id="answer1"><span class='answers'>Answer
+                            1</span></button>
+                    <button type="button" class="btn btn-secondary answerBtn" id="answer2"><span class='answers'>Answer
+                            1</span></button>
+                    <button type="button" class="btn btn-secondary answerBtn" id="answer3"><span class='answers'>Answer
+                            1</span></button>
+                    <button type="button" class="btn btn-secondary answerBtn" id="answer4"><span class='answers'>Answer
+                            1</span></button>
                 </div>
             </div>
         </div>
     </div>
 
-    <form action="game.html">
-        <button id="startButton" class="hidden" data-toggle="modal" data-target="myModal">Press
-            Start!</button>
-    </form>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -97,5 +77,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 
 </html>

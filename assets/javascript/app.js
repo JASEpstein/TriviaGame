@@ -14,43 +14,52 @@ PSEUDOCODE:
 */
 
 var gameStart = false;
+var randomQuestion = '';
+var difficulty;
+var roundArr = [0];
 
 var easyArr = [{
         question: "What is Andy Dwyer's law enforcement alter ego?",
         answer1: "Burt Macklen",
         answer2: "Johnny Karate",
         answer3: "Kurt Hackman",
-        answer4: "Jack Bower"
+        answer4: "Jack Bower",
+        correctAnswer: "Burt Macklen"
     }, {
         question: "What is Ron's musical alter ego?",
         answer1: "Duke Silver",
         answer2: "Terry Silvas",
         answer3: "Ron Silver",
-        answer4: "Jack Macklen"
+        answer4: "Jack Macklen",
+        correctAnswer: "Duke Silver"
     }, {
         question: "What special day do Donna and Tom celebrate?",
         answer1: "Galentine's Day",
         answer2: "St. Patrick's Day",
         answer3: "Treat Yo Self Day",
-        answer4: "Swagger Day"
+        answer4: "Swagger Day",
+        correctAnswer: "Treat Yo Self Day"
     }, {
         question: "What is the most recent name of Andy's band?",
         answer1: "Jet Black Pope",
         answer2: "Everything Rhymes With Orange",
         answer3: "Fourskin",
-        answer4: "Mouse Rat"
+        answer4: "Mouse Rat",
+        correctAnswer: "Mouse Rat"
     }, {
         question: "Where does Tammy #2 work?",
         answer1: "The sewage dept",
         answer2: "The public works dept",
         answer3: "The library",
-        answer4: "Macy's"
+        answer4: "Macy's",
+        correctAnswer: "The library"
     }, {
         question: "What is the name of the club Tom co-owns?",
         answer1: "The Snakehole Lounge",
         answer2: "The Glitter Factory",
         answer3: "Tommy's Place",
-        answer4: "The Bulge"
+        answer4: "The Bulge",
+        correctAnswer: "The Snakehole Lounge"
     }
 
 ];
@@ -59,15 +68,52 @@ function roundStart() {
 
 }
 
+function difficultySelection() {}
 
+function genRandomQuestion() {
+    var newItem = (easyArr[(Math.floor(Math.random() * easyArr.length))]);
+    if (roundArr.includes(newItem)) {
+        genRandomQuestion();
+    } else {
+        roundArr.push(newItem);
+    }
+}
 
+function postNewQuestion() {
+    var arrayItem = roundArr[roundArr.length - 1];
+    var arrayPos = roundArr.indexOf(arrayItem);
+    $('#questionNumber').text(arrayPos);
+    $('#questionHero').text(arrayItem.question);
+
+}
+
+function getReady() {
+    $('#questionHero').text('Get Ready...');
+}
 
 $('#startButton').on('click', function () {
-    if (gameStart == true) {
-        roundStart();
-    } else {
-        gameStart = true;
-    }
+
+
+    // $('.modalBtn').on('click', function () {
+
+    // });
+    // $('.modal').on('dialogclose', function () {});
+    // window.location.href = "game.html";
+
 });
 
-$(document).on('ready', function () {});
+
+$('.diff').on('click', function () {
+    difficultySelection();
+});
+
+$('.answerBtn').on('click', function () {
+    console.log('BLAHBLAHBLAH');
+});
+
+$(document).ready(function () {
+    if (window.location.pathname === '/game.html') {
+        genRandomQuestion();
+        postNewQuestion();
+    }
+});

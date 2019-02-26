@@ -14,19 +14,44 @@ body {
 }
 
 
-
-/* #startButton {
-   width: 100px;
-   height: 100px;
-   border-radius: 50%;
-   position: absolute;
-   top: 35%;
-   left: 36%;
-   border: 1px solid aqua;
-   background: transparent;
+#startButton {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 30rem;
+    top: 15rem;
 }
 
-.hidden {
+/* #startButton {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 36%;
+    border: 1px solid aqua;
+    background: transparent;
+} */
+
+#countdownClock {
+    text-align: right;
+}
+
+.btn-group-lg {
+    width: 20rem;
+    height: 15rem;
+    margin-top: 30px;
+    /* vertical-align: middle; */
+}
+
+.card-text {
+    margin-bottom: 16rem;
+    height: 30rem;
+}
+
+.answers {}
+
+/* .hidden {
     display: none;
 }
 
