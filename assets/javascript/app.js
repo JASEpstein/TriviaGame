@@ -17,6 +17,7 @@ var gameStart = false;
 var randomQuestion = '';
 var difficulty;
 var roundArr = [0];
+var arrayObj;
 
 var easyArr = [{
         question: "What is Andy Dwyer's law enforcement alter ego?",
@@ -83,26 +84,22 @@ function answersPopulateCheck() {
 
 function postNewQuestion() {
     //Populate Question and Question Number from Array
-    var arrayObj = roundArr[roundArr.length - 1];
+    arrayObj = roundArr[roundArr.length - 1];
     var arrayPos = roundArr.indexOf(arrayObj);
     $('#questionNumber').text(arrayPos);
     $('#questionHero').text(arrayObj.question);
     //Populate the answer button text randomly
-    console.log(arrayObj.answers);
     $('.answers').each(function (index) {
         $(this).text(arrayObj.answers[index]);
     });
 }
 
-function getReady() {
-    $('#questionHero').text('Get Ready...');
-}
+function getReady() {}
 
 $('#startButton').on('click', function () {
 
 
     // $('.modalBtn').on('click', function () {
-
     // });
     // $('.modal').on('dialogclose', function () {});
     // window.location.href = "game.html";
@@ -115,7 +112,12 @@ $('.diff').on('click', function () {
 });
 
 $('.answerBtn').on('click', function () {
-    console.log('BLAHBLAHBLAH');
+    if ($(this).text() === arrayObj.correctAnswer) {
+        $('.card-text1').addClass('hidden');
+        $('.card-text2').show();
+    } else {
+
+    }
 });
 
 $(document).ready(function () {

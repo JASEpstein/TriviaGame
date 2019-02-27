@@ -5,6 +5,10 @@ body {
     background-color: #81A161;
 }
 
+.hidden {
+    display: none;
+}
+
 .navbar.navbar-expand-lg.navbar-light.bg-dark a {
     color: aliceblue;
 }
@@ -49,7 +53,6 @@ body {
     height: 30rem;
 }
 
-.answers {}
 
 /* .hidden {
     display: none;

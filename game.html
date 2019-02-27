@@ -40,7 +40,8 @@
                         Difficulty
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item diff easy" type="button">Easy</button>
+                        <span class="dropdown-item-text"><span class="badge badge-success badge-pill">Current: Easy</span></span>
+                        <button class="dropdown-item diff easy d-flex justify-content-between align-items-center" type="button">Easy</button>
                         <button class="dropdown-item diff medium" type="button">Medium</button>
                         <button class="dropdown-item diff hard" type="button">Hard</button>
                     </div>
@@ -53,7 +54,7 @@
         <div class="card-header">Question #<span id="questionNumber"></span></div>
         <div class="card-body">
             <h2 class="card-title" id="countdownClock">:10</h2>
-            <div class="card-text">
+            <div class="card-text1">
                 <span id="questionHero">Here's the question</span>
                 <br>
                 <div class="btn-group-lg btn-group-vertical" role="group" aria-label="Basic example" id="answerBtnGrp">
@@ -66,6 +67,11 @@
                     <button type="button" class="btn btn-secondary answerBtn"><span id="answer4" class='answers'>Answer
                             1</span></button>
                 </div>
+            </div>
+            <div class="card-text2 hidden">
+                <span id="questionHero">WAY TO GO!</span>
+                <br>
+
             </div>
         </div>
     </div>
