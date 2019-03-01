@@ -39,6 +39,7 @@ body {
 
 #countdownClock {
     text-align: right;
+    display: block;
 }
 
 .btn-group-lg {

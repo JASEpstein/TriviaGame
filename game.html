@@ -41,9 +41,13 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <span class="dropdown-item-text"><span class="badge badge-success badge-pill">Current: Easy</span></span>
-                        <button class="dropdown-item diff easy d-flex justify-content-between align-items-center" type="button">Easy</button>
-                        <button class="dropdown-item diff medium" type="button">Medium</button>
-                        <button class="dropdown-item diff hard" type="button">Hard</button>
+                        <span class="dropdown-item-text"><span class="badge badge-warning badge-pill hidden">Current:
+                                Medium</span></span>
+                        <span class="dropdown-item-text"><span class="badge badge-danger badge-pill hidden">Current:
+                                Hard</span></span>
+                        <button class="dropdown-item diff easyBtn" type="button">Easy</button>
+                        <button class="dropdown-item diff mediumBtn" type="button">Medium</button>
+                        <button class="dropdown-item diff hardBtn" type="button">Hard</button>
                     </div>
                 </div>
             </ul>
@@ -53,27 +57,68 @@
     <div class="card text-white text-center bg-dark my-3 mx-auto" style="max-width: 45rem;">
         <div class="card-header">Question #<span id="questionNumber"></span></div>
         <div class="card-body">
-            <h2 class="card-title" id="countdownClock">:10</h2>
+            <h2 class="card-title"></h2>
+
+            <!-- Question Page -->
             <div class="card-text1">
+                <h2 id="countdownClock">10 sec</h2>
                 <span id="questionHero">Here's the question</span>
                 <br>
                 <div class="btn-group-lg btn-group-vertical" role="group" aria-label="Basic example" id="answerBtnGrp">
-                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer1" class='answers'>Answer
+                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer1">Answer
                             1</span></button>
-                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer2" class='answers'>Answer
-                            1</span></button>
-                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer3" class='answers'>Answer
-                            1</span></button>
-                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer4" class='answers'>Answer
-                            1</span></button>
+                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer2">Answer
+                            2</span></button>
+                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer3">Answer
+                            3</span></button>
+                    <button type="button" class="btn btn-secondary answerBtn"><span id="answer4">Answer
+                            4</span></button>
                 </div>
             </div>
-            <div class="card-text2 hidden">
+
+            <!-- Correct Answer Page -->
+            <div class="card-text2">
                 <span id="questionHero">WAY TO GO!</span>
                 <br>
+                <div class="gifGoesHere">
 
+                </div>
+                <button class="btn btn-secondary nextQuestion" type="submit">Next Question</button>
             </div>
+
+            <!-- Incorrect Answer Page -->
+            <div class="card-text3">
+                <span id="questionHero">Oops! Incorrect...</span>
+                <h3>The correct answer was:
+                    <br>
+                    <span id="correctAnswer"></span>
+                </h3>
+                <br>
+                <button class="btn btn-secondary nextQuestion" type="submit">Next Question</button>
+            </div>
+
+            <!-- Time Up Page -->
+            <div class="card-text4">
+                <span id="questionHero">Time's Up! </span>
+                <br>
+                <h3>KEEP TRYING!</h3>
+                <button class="btn btn-secondary nextQuestion" type="submit">Next Question</button>
+            </div>
+
+            <!-- Summary Card Page -->
+            <div class="card-text5">
+                <span id="questionHero">How Did You Do?</span>
+                <h3>You got <span id="correctAnswerCount"></span> out of 10 correct!
+                </h3>
+                <br>
+                <h3>WAY TO BE!</h3>
+                <button class="btn btn-secondary reset" type="reset">Try Again?</button>
+            </div>
+
+
+
         </div>
+    </div>
     </div>
 
 
