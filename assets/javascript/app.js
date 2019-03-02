@@ -21,6 +21,7 @@ var seconds_left;
 var correctAnswerCount = 0;
 var interval;
 
+
 var easyArr = [{
         question: "What is Andy Dwyer's law enforcement alter ego?",
         answers: ["Burt Macklen", "Johnny Karate", "Kurt Hackman", "Jack Bower"],
@@ -79,50 +80,54 @@ var mediumArr = [{
 }, {
     question: "What is Garry's ideal vacation city?",
     answers: ["Boca Raton, FL", "Muncie, IN", "Pawnee, IN", "Honolulu, HI"],
-    correctAnswer: answers[2]
+    correctAnswer: "Muncie, IN"
 }, {
     question: "What gift does Leslie give Ben before he moves to Washington D.C?",
     answers: ["Washington Monument", "Guidebook", "A Ring", "Minature of Parliament"],
-    correctAnswer: answers[1]
+    correctAnswer: "Washington Monument"
 }, {
     question: "What is the name of the pig Ron slaughters for the Dept BBQ?",
     answers: ["Ron", "Jerry", "Porky", "Tom"],
-    correctAnswer: answers[4]
+    correctAnswer: "Tom"
 }, {
     question: "Who does Leslie hunt down for the Mayor?",
     answers: ["Rocky Racoon", "Fairway Frank", "Councilman Jamm", "His dog, Rufus"],
-    correctAnswer: answers[2]
+    correctAnswer: "Fairway Frank"
 }, {
     question: "Where is Ben Wyatt from?",
     answers: ["Icetown, IN", "Indianapolis, IN", "Partridge, MN", "Gary, IN"],
-    correctAnswer: answers[3]
+    correctAnswer: "Partridge, MN"
 }, {
     question: "What is the lot number of the pit next to Ann's house?",
     answers: ["Lot 22", "Lot 44", "Lot 1", "Lot 48"],
-    correctAnswer: answers[4]
+    correctAnswer: "Lot 48"
 }, {
     question: "Who is The Douche's partner?",
     answers: ["Crazy Ira", "Farts McGee", "Buttface", "Dumb Steve"],
-    correctAnswer: answers[1]
+    correctAnswer: "Crazy Ira"
 }, {
     question: "What is Ron's favorite restaurant?",
     answers: ["St Elmo's Steakhouse", "Mulligan's Steakhouse", "Food and Stuff", "Tom's Bistro"],
-    correctAnswer: answers[2]
+    correctAnswer: "Mulligan's Steakhouse"
 }, {
     question: "What is Donna's estranged brother's name?",
     answers: ["LaMarcus", "Tito", "Marshawn", "LaVondrious"],
-    correctAnswer: answers[4]
+    correctAnswer: "LaVondrious"
 }, {
     question: "What is the name of the gay bar behind Ron's house?",
     answers: ["The Bulge", "Twink's", "Saddlebags", "The Glitter Factory"],
-    correctAnswer: answers[1]
+    correctAnswer: "The Bulge"
 }];
 
+var chosenDifficultyArr = easyArr;
 
-function difficultySelection() {}
+
+function difficultySelection(selection) {
+    chosenDifficultyArr = selection;
+}
 
 function genRandomQuestion() {
-    var newItem = (easyArr[(Math.floor(Math.random() * easyArr.length))]);
+    var newItem = (chosenDifficultyArr[(Math.floor(Math.random() * chosenDifficultyArr.length))]);
     if (roundArr.includes(newItem)) {
         genRandomQuestion();
     } else {
@@ -194,6 +199,44 @@ $('.nextQuestion').on('click', function () {
     $('.card-text2').hide();
     $('.card-text1').show();
 });
+
+$('.easyBtn').on('click', function () {
+    chosenDifficultyArr = easyArr;
+    $('#mediumPill').addClass('hidden');
+    $('#hardPill').addClass('hidden');
+    $('#easyPill').removeClass('hidden');
+});
+
+$('.mediumBtn').on('click', function () {
+    chosenDifficultyArr = mediumArr;
+    $('#mediumPill').removeClass('hidden');
+    $('#hardPill').addClass('hidden');
+    $('#easyPill').addClass('hidden');
+});
+
+$('.hardBtn').on('click', function () {
+    // chosenDifficultyArr = hardArr;
+    $('#mediumPill').addClass('hidden');
+    $('#hardPill').removeClass('hidden');
+    $('#easyPill').addClass('hidden');
+});
+
+$(document).on('click', '.dropdown.dropdown-menu', function (e) {
+    e.stopPropagation();
+});
+
+// $('body').on('click', function (e) {
+//     if (!$('#dropdownMenu2').is(e.target) &&
+//         $('#dropdownMenu2').has(e.target).length === 0 &&
+//         $('.open').has(e.target).length === 0
+//     ) {
+//         $('#dropdownMenu2').removeClass('open');
+//     }
+// });
+
+// $('#dropdownMenu2').on('click', function (event) {
+//     $(this).parent().toggleClass('open');
+// });
 
 $('.answerBtn').on('click', function () {
     //If user answers CORRECTLY
