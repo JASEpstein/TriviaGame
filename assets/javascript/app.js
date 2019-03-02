@@ -153,9 +153,9 @@ function showTimeUpCard() {
 }
 
 function cardCountdown() {
-    $('#countdownClock').text('10 sec');
+    $('#countdownClock').text('6 sec');
     clearInterval(interval);
-    seconds_left = 10;
+    seconds_left = 6;
     // $('#countdownClock').text();
     interval = setInterval(function () {
         $('#countdownClock').text(--seconds_left + ' sec');
