@@ -68,6 +68,56 @@ var easyArr = [{
     }
 
 ];
+var mediumArr = [{
+    question: "What nocturnal ailment does Ron suffer from?",
+    answers: ["Sleep Apnea", "Night terrors", "Night fighting", "Snoring"],
+    correctAnswer: "Night fighting"
+}, {
+    question: "What department did Mark Brandaniwcz work in?",
+    answers: ["Architecture", "Public Works", "Registrar's Office", "City Planning"],
+    correctAnswer: "City Planning"
+}, {
+    question: "What is Garry's ideal vacation city?",
+    answers: ["Boca Raton, FL", "Muncie, IN", "Pawnee, IN", "Honolulu, HI"],
+    correctAnswer: answers[2]
+}, {
+    question: "What gift does Leslie give Ben before he moves to Washington D.C?",
+    answers: ["Washington Monument", "Guidebook", "A Ring", "Minature of Parliament"],
+    correctAnswer: answers[1]
+}, {
+    question: "What is the name of the pig Ron slaughters for the Dept BBQ?",
+    answers: ["Ron", "Jerry", "Porky", "Tom"],
+    correctAnswer: answers[4]
+}, {
+    question: "Who does Leslie hunt down for the Mayor?",
+    answers: ["Rocky Racoon", "Fairway Frank", "Councilman Jamm", "His dog, Rufus"],
+    correctAnswer: answers[2]
+}, {
+    question: "Where is Ben Wyatt from?",
+    answers: ["Icetown, IN", "Indianapolis, IN", "Partridge, MN", "Gary, IN"],
+    correctAnswer: answers[3]
+}, {
+    question: "What is the lot number of the pit next to Ann's house?",
+    answers: ["Lot 22", "Lot 44", "Lot 1", "Lot 48"],
+    correctAnswer: answers[4]
+}, {
+    question: "Who is The Douche's partner?",
+    answers: ["Crazy Ira", "Farts McGee", "Buttface", "Dumb Steve"],
+    correctAnswer: answers[1]
+}, {
+    question: "What is Ron's favorite restaurant?",
+    answers: ["St Elmo's Steakhouse", "Mulligan's Steakhouse", "Food and Stuff", "Tom's Bistro"],
+    correctAnswer: answers[2]
+}, {
+    question: "What is Donna's estranged brother's name?",
+    answers: ["LaMarcus", "Tito", "Marshawn", "LaVondrious"],
+    correctAnswer: answers[4]
+}, {
+    question: "What is the name of the gay bar behind Ron's house?",
+    answers: ["The Bulge", "Twink's", "Saddlebags", "The Glitter Factory"],
+    correctAnswer: answers[1]
+}];
+
 
 function difficultySelection() {}
 
