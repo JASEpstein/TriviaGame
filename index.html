@@ -27,10 +27,11 @@
                         Game
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Restart</button>
+                        <a class="dropdown-item" href="index.html">Home</a>
+                        <button class="dropdown-item" href="index.html" type="button">Restart</button>
                         <button class="dropdown-item" type="button">Pause</button>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Change Trivia Source</button>
+                        <button class="dropdown-item" type="button">Change to:<br> The Office Trivia</button>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -39,12 +40,18 @@
                         Difficulty
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item easy" type="button">Easy</button>
-                        <button class="dropdown-item medium" type="button">Medium</button>
-                        <button class="dropdown-item hard" type="button">Hard</button>
+                        <button class="dropdown-item diff easyBtn" type="button">Easy</button>
+                        <button class="dropdown-item diff mediumBtn" type="button">Medium</button>
+                        <button class="dropdown-item diff hardBtn" type="button">Hard</button>
                     </div>
                 </div>
             </ul>
+            <span class="badge badge-success badge-pill" id="easyPill">Current:
+                Easy</span>
+            <span class="badge badge-warning badge-pill hidden" id="mediumPill">Current:
+                Medium</span>
+            <span class="badge badge-danger badge-pill hidden" id="hardPill">Current:
+                Hard</span>
         </div>
     </nav>
 
