@@ -26,7 +26,7 @@ body {
     top: 15rem;
 }
 
-/* #startButton {
+#startButton {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -35,11 +35,15 @@ body {
     left: 36%;
     border: 1px solid aqua;
     background: transparent;
-} */
+}
 
 #countdownClock {
     text-align: right;
     display: block;
+}
+
+.card-header {
+    font-size: 30px;
 }
 
 .btn-group-lg {
@@ -54,11 +58,24 @@ body {
     height: 30rem;
 }
 
+#questionHero {
+    font-size: 25px;
+}
 
-/* .hidden {
-    display: none;
+#countdownClock {
+    font-size: 25px;
+}
+
+#questionCorrect {
+    font-size: 20px;
+}
+
+#questionTimeUp {
+    font-size: 45px;
 }
 
 .hidden:hover {
     display: block;
-} */
+}
+
+*/

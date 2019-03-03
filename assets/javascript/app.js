@@ -286,7 +286,7 @@ $('.answerBtn').on('click', function () {
         $('.card-text3').hide();
         $('.card-text5').show();
         $('#correctAnswerCount').text(correctAnswerCount);
-        cardCountdown(clearInterval(interval));
+        clearInterval(interval);
 
 
     }
